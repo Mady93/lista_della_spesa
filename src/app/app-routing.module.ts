@@ -10,9 +10,11 @@ Per prima cosa si crea il path per i componenti con i ruoli di pagine
 const routes: Routes = [
   { path: PATH_CONST.HOME, component: HomeComponent },
   { path: '', redirectTo: PATH_CONST.HOME, pathMatch: 'full' },
-  {path: PATH_CONST.INSERT + '/:productId', component:InsertProductComponent}
+  {
+    path: PATH_CONST.INSERT + '/:productId',
+    component: InsertProductComponent,
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

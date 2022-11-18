@@ -12,7 +12,9 @@
 </div>
 <div class="row mt-5">
   <div class="col-12">
-    <!-- table è figlio di home -->
-    <app-table [listaTable]="productListHome"></app-table>
+    <!-- table è figlio di home -- pasare in input [] -->
+    <app-table [listaTable]="productListHome"
+    (emitModifyProduct)="modifyProduct($event)"
+    (emitDeleteProduct)="deleteProduct($event)"></app-table>
   </div>
 </div>

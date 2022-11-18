@@ -1,5 +1,5 @@
 import { ProductModel } from './../../../models/product';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -8,8 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  // il figlio riceve i dati dal padre
+  // il figlio riceve i dati dal padre home
   @Input() listaTable: ProductModel[];
+
+
+  //il figlio manda informazioni al padre home attraverso la classe eventEmiter
+  @Output() emitModifyProduct: EventEmitter<string> = new EventEmitter();
+  @Output() emitDeleteProduct: EventEmitter<string> = new EventEmitter();
+
 
   constructor() {
     this.listaTable = [];
@@ -19,7 +25,13 @@ export class TableComponent implements OnInit {
     console.log(this.listaTable);
   }
 
-  public modifica(product: ProductModel) {}
 
-  public cancella(Product: ProductModel) {}
+  //comunicazione figlio con il padre
+  public modifica(product: ProductModel) {
+    this.emitModifyProduct.emit(product.id);
+  }
+
+  public cancella(product: ProductModel) {
+    this.emitDeleteProduct.emit(product.id);
+  }
 }
