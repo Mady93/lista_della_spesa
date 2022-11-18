@@ -1,0 +1,27 @@
+<div class="row mt-5">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOME</th>
+          <th scope="col">QUANTITA</th>
+          <th scope="col">DESCRIZIONE</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of listaTable">
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.nome}}</td>
+          <td>{{product.quantita}}</td>
+          <td>{{product.descrizione}}</td>
+          <td>
+            <button type="button" class="btn btn-warning" (click)="modifica(product)">Modifica</button>
+            <button type="button" class="btn btn-danger" (click)="cancella(product)">Cancella</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
