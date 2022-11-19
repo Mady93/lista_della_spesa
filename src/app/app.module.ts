@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './components/home/table/table.component';
 import { HomeComponent } from './components/home/home.component';
 import { InsertProductComponent } from './components/insert-product/insert-product.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InsertProductComponent } from './components/insert-product/insert-produ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

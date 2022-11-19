@@ -37,4 +37,22 @@ export class ProductService {
   public getProductListService() {
     return this.productListService;
   }
+
+
+  //metodo home per search
+  public getProductListByName_Home(productName: string) {
+    if(productName){
+      console.log(productName);
+      let lista: ProductModel[] = [];
+      this.productListService.forEach((res) => {
+        console.log(res.nome.includes(productName));
+        if (res.nome.includes(productName)) {
+          lista.push(res);
+        }
+      });
+      return lista;
+    }else{
+      return this.getProductListService();
+    }
+  }
 }

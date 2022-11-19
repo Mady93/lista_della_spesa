@@ -7,7 +7,7 @@
 
 <div class="row mt-5">
   <div class="col-12">
-    <app-search></app-search>
+    <app-search (emitSendSearch)="receiveSearch($event)"></app-search>
   </div>
 </div>
 <div class="row mt-5">

@@ -29,4 +29,8 @@ export class HomeComponent implements OnInit {
   public deleteProduct(productId: string) {
     this.ProductService.deleteProductService(productId);
   }
+
+  public receiveSearch(search:string){
+this.productListHome=this.ProductService.getProductListByName_Home(search);
+  }
 }
